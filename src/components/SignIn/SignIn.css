@@ -1,0 +1,28 @@
+.signin-card {
+  max-width: 900px;
+  width: 100%;
+  border: 15px solid #ffffff; /* Add a 15px solid white border around the signin-card */
+}
+
+.signin-image-section {
+  min-height: 300px;
+  background-image: url("../../assets/login.jpg"); /* Ensure this image path is correct */
+  background-size: cover;
+  background-position: center;
+}
+
+.signin-form-section {
+  width: 100%;
+}
+
+.head-text {
+  font-size: small;
+}
+
+.input-group-text {
+  background-color: #ffffff;
+}
+
+.fields {
+  color: #1e00ff;
+}
