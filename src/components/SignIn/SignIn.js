@@ -24,6 +24,16 @@ const SignIn = () => {
     },
     {
       id: 2,
+      firstname: "Sai",
+      lastname: 'm',
+      email: "sai@gmail.com",
+      password: "123",
+      phone: 1234567890,
+      Id: '568'
+    },
+
+    {
+      id: 3,
       firstname: "ibrahim",
       lastname: 's',
       email: "ibrahim@gmail.com",
@@ -38,7 +48,7 @@ const SignIn = () => {
     const user = data.find(user => user.email === email && user.password === password);
 
     if (user) {
-      // Store only the logged-in user's details
+      
       const userDataToStore = {
         id: user.id,
         firstname: user.firstname,
@@ -56,7 +66,7 @@ const SignIn = () => {
         draggable: true,
         progress: undefined,
       });
-      setTimeout(() => navigate("/dashboard"), 3000);
+      setTimeout(() => navigate("/sidebar/dashboard"), 3000);
     } else {
       toast.error('Invalid Credentials', {
         position: "top-right",
@@ -75,9 +85,9 @@ const SignIn = () => {
     <div className="bg-primary d-flex align-items-center justify-content-center min-vh-100 px-3">
       <ToastContainer />
       <div className="signin-card  d-flex flex-column flex-md-row rounded-4  w-100 mx-auto">
-        {/* Image Section - full width on small,50% on md+ */}
+      
         <div className=" signin-image-section w-100 w-md-50"></div>
-        {/* Form Section */}
+     
         <div className="  signin-form-section bg-white flex-grow-1 ">
           <div className="text-start head-text mt-5">
             <p className="fw-bold ">Let the Journey Begin!</p>

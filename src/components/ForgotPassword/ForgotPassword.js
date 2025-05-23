@@ -60,7 +60,7 @@ const ForgotPassword = () => {
               </form>
               <p className="text-center mt-3">
                 Don’t received code yet?{" "}
-                <a href="#" className="fw-bold text-decoration-none mt-3">Send again</a>
+                <a href="#" className="fw-bold text-decoration-underline mt-3 text-primary">Send again</a>
               </p>
             </>
           )}
