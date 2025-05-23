@@ -71,30 +71,30 @@ const SignIn = () => {
   }
 
   return (
+    
     <div className="bg-primary d-flex align-items-center justify-content-center min-vh-100 px-3">
       <ToastContainer />
-      <div className="signin-card d-flex flex-column flex-md-row rounded-5 overflow-hidden w-100 mx-auto">
-        {/* Image Section - full width on small, 50% on md+ */}
-        <div className="signin-image-section w-100 w-md-50"></div>
-
+      <div className="signin-card  d-flex flex-column flex-md-row rounded-4  w-100 mx-auto">
+        {/* Image Section - full width on small,50% on md+ */}
+        <div className=" signin-image-section w-100 w-md-50"></div>
         {/* Form Section */}
-        <div className="signin-form-section bg-white p-4 p-md-5 flex-grow-1">
-          <div className="text-start head-text mb-4">
-            <p className="fw-bold">Let the Journey Begin!</p>
-            <p className="fw-bold">
+        <div className="  signin-form-section bg-white flex-grow-1 ">
+          <div className="text-start head-text mt-5">
+            <p className="fw-bold ">Let the Journey Begin!</p>
+            <p className="fw-bold p-0">
               Unlock a world of education with a single click! Please login to your account.
             </p>
           </div>
 
           <form onSubmit={handleSubmit}>
-            <div className="form-group mb-3">
-              <label className="fields fw-semibold mb-2">Email Address</label>
-              <div className="input-group">
+            <div className="form-group mt-5">
+              <label className="fcol fw-semibold">Email Address</label>
+              <div className="input-group mb-3">
                 <input
                   type="email"
                   value={email}
                   className="form-control"
-                  placeholder="Enter your email"
+                  placeholder="Enter your Email"
                   aria-label="Email"
                   aria-describedby="email-icon"
                   onChange={(e) => setEmail(e.target.value)}
@@ -106,13 +106,13 @@ const SignIn = () => {
             </div>
 
             <div className="form-group mb-3">
-              <label className="fields fw-semibold mb-2">Password</label>
-              <div className="input-group">
+              <label className="fcol fw-semibold">Password</label>
+              <div className="input-group mb-5">
                 <input
                   type="password"
                   value={password}
                   className="form-control"
-                  placeholder="Enter your password"
+                  placeholder="Enter your Password"
                   aria-label="Password"
                   aria-describedby="password-icon"
                   onChange={(e) => setPassword(e.target.value)}
@@ -134,7 +134,7 @@ const SignIn = () => {
           </form>
 
           <p className="mt-3 fw-bold">
-            Don't have an Account? <Link to="/signup" className="text-primary text-decoration-none">Sign Up</Link>
+            Don't have an Account? <Link to="/signup" className="text-primary text-decoration-underline">Sign Up</Link>
           </p>
         </div>
       </div>
