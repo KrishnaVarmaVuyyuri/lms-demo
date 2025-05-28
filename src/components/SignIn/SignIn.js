@@ -59,18 +59,18 @@ const SignIn = () => {
       localStorage.setItem("userData", JSON.stringify(userDataToStore));
       toast.success('Login successful!', {
         position: "top-right",
-        autoClose: 3000,
+        autoClose:600,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
       });
-      setTimeout(() => navigate("/sidebar/dashboard"), 3000);
+      setTimeout(() => navigate("/sidebar/dashboard"), 1000);
     } else {
       toast.error('Invalid Credentials', {
         position: "top-right",
-        autoClose: 1000,
+        autoClose: 600,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
