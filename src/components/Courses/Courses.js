@@ -76,7 +76,7 @@ const Courses = () => {
       </div>
 
       {/* Main Content */}
-      <div className="container">
+      <div className="container-fliud px-5">
         <h4 className="courses-head fw-bold mb-4">Courses</h4>
 
         {/* Programming Section */}
