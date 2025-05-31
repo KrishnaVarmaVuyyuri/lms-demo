@@ -89,7 +89,7 @@ const SignIn = () => {
         <div className=" signin-image-section w-100 w-md-50"></div>
      
         <div className="  signin-form-section bg-white flex-grow-1 ">
-          <div className="text-start head-text mt-5">
+          <div className="text-start head-text mt-2">
             <p className="fw-bold ">Let the Journey Begin!</p>
             <p className="fw-bold p-0">
               Unlock a world of education with a single click! Please login to your account.
@@ -117,7 +117,7 @@ const SignIn = () => {
 
             <div className="form-group mb-3">
               <label className="fcol fw-semibold">Password</label>
-              <div className="input-group mb-5">
+              <div className="input-group mb-2">
                 <input
                   type="password"
                   value={password}
