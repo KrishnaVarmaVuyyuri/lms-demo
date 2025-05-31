@@ -19,9 +19,14 @@
 .container-fluid {
   margin-top: 70px;
 }
-
+.courses-head{
+ color: #001f5c;
+}
+.student-name{
+  color: #001f5c;
+}
 .header-icons {
-  font-size: 1.2rem;
+  /* font-size: 1.2rem; */
   color: #001f5c;
   cursor: pointer;
 }
@@ -43,14 +48,19 @@
   border-bottom: 3px solid #6f42c1;
   display: inline-block;
   padding-bottom: 5px;
+  
 }
 
 .courses-slider-container {
-  position: relative;
+  position:relative;
   background-color: #f2f3f7;
-  padding: 2rem;
+  padding-right: 4rem;
+  /* padding-left: 4rem; */
   overflow: hidden;
-  border-radius: 12px;
+  width:95%;
+ 
+  
+  /* border-radius: 12px; */
 }
 
 .courses-slider {
@@ -60,8 +70,9 @@
 }
 
 .course-card {
+  
   background-color: #fff;
-  border-radius: 8px;
+  border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   flex: 0 0 calc(33.333% - 1rem);
   padding-bottom: 1rem;
@@ -69,10 +80,10 @@
 
 .course-img {
   width: 100%;
-  height: 160px;
-  object-fit: contain;
-  background-color: #f8f9fa;
-  padding: 10px;
+  height: 200px;
+  object-fit: cover;
+  /* background-color: #f8f9fa; */
+  /* padding: 10px; */
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 }
@@ -111,11 +122,11 @@
 }
 
 .next-btn {
-  right: 1.5rem;
+  right: 0.5rem;
 }
 
 .prev-btn {
-  left: 1.5rem;
+  left: 0.5rem;
 }
 
 /* Reuse same style for Designing carousel */
