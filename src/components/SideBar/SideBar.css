@@ -31,7 +31,8 @@
   /* padding-top: 60px; */
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
   z-index: 1040;
-  transition: width 0.3s ease;
+  transition: width 0.2s linear;
+  
 }
 
 .sidebar.show {
@@ -67,7 +68,7 @@
 
 /* Main content */
 .main-content {
-  transition: margin-left 0.4s ease;
+  transition: margin-left 0.2s linear;
   
 }
 

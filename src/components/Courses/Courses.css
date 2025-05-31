@@ -66,7 +66,7 @@
 .courses-slider {
   display: flex;
   gap: 1.5rem;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s linear;
 }
 
 .course-card {
@@ -129,7 +129,7 @@
   left: 0.5rem;
 }
 
-/* Reuse same style for Designing carousel */
+
 .designing-slider-container {
   composes: courses-slider-container;
 }
