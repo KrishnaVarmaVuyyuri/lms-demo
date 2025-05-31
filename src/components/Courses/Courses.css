@@ -1,0 +1,128 @@
+/* Cleaned & Unified Courses.css */
+
+.courses-wrapper {
+  background-color: #f1f2f6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.courses-topbar {
+  background-color: #001f5c;
+  height: 70px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.container-fluid {
+  margin-top: 70px;
+}
+
+.header-icons {
+  font-size: 1.2rem;
+  color: #001f5c;
+  cursor: pointer;
+}
+
+.filter-section {
+  background-color: #001f5c;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.text-purple {
+  color: #6f42c1;
+}
+
+.underline-heading {
+  border-bottom: 3px solid #6f42c1;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.courses-slider-container {
+  position: relative;
+  background-color: #f2f3f7;
+  padding: 2rem;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.courses-slider {
+  display: flex;
+  gap: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.course-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  flex: 0 0 calc(33.333% - 1rem);
+  padding-bottom: 1rem;
+}
+
+.course-img {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  background-color: #f8f9fa;
+  padding: 10px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.course-title {
+  background-color: #001f5c;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1rem;
+  padding: 0.6rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.course-desc {
+  padding: 0.7rem 1rem;
+  font-size: 0.85rem;
+  color: #333;
+}
+
+.next-btn, .prev-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #001f5f;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.next-btn {
+  right: 1.5rem;
+}
+
+.prev-btn {
+  left: 1.5rem;
+}
+
+/* Reuse same style for Designing carousel */
+.designing-slider-container {
+  composes: courses-slider-container;
+}
+
+.designing-slider {
+  composes: courses-slider;
+}
