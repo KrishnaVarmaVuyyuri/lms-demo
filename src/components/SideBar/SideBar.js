@@ -40,7 +40,7 @@ const SideBar = () => {
         </button>
 
         {/* Navigation */}
-        <ul className="nav flex-column px-3 mt-4">
+        <ul className="nav flex-column px-3 mt-5">
           <li className="nav-item mb-2">
             <Link to="dashboard" className="nav-link d-flex align-items-center gap-2">
               <FaHome style={{ color: "rgb(39,32,88)" }} />
