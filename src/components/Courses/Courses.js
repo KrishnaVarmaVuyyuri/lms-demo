@@ -113,11 +113,12 @@ const Courses = () => {
             <FaChevronDown className="courses-header-icons" />
           </div>
         </div>
+        
       </div>
 
       {/* Main Content */}
-      <div className="container-fluid p-5">
-        <h4 className="courses-head fw-bold ">Courses</h4>
+      <div className="container-fluid py-5 px-5">
+        <h4 className="courses-heading fw-bold ">Courses</h4>
 
         <h6 className="text-uppercase course-side-heading fw-bold underline-heading mb-3">Programming</h6>
         <div className="courses-slider-container">

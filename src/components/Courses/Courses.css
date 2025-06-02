@@ -19,8 +19,10 @@
 
 .container-fluid {
   margin-top: 60px;
+  
 }
-.courses-head{
+
+.courses-heading{
  color: #001f5c;
  margin-top: -100px;
 }
@@ -60,7 +62,7 @@
   padding-right:3.5rem;
   /* padding-left: 4rem; */
   overflow: hidden;
-  width:95%;
+  /* width:95%; */
  
   
   /* border-radius: 12px; */
