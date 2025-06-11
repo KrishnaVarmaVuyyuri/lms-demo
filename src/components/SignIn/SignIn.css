@@ -1,4 +1,4 @@
-.signin-card {
+/* .signin-card {
   min-height: 500px;
   max-width: 1000px;
   width: 100%;
@@ -33,4 +33,103 @@
 
 .head-text p{
   font-size:medium;
+} */
+
+ /* File: Signin.css */
+
+.signin-container {
+  background-color: #722D95;
+}
+
+.signin-box {
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 820px !important;
+  height: 520px !important;
+}
+
+.image-section {
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.signin-image {
+  width: 410px !important;
+  height: 520px !important;
+  object-fit: cover;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.label-class {
+  color: #722D95;
+  font-weight: 600;
+  margin-top: 7px;
+  margin-bottom: 3px !important;
+}
+
+.input-class {
+  border: 1px solid #722D95 !important;
+  border-right: none !important;
+  border-radius: 0.375rem 0 0 0.375rem !important;
+}
+
+.input-class::placeholder {
+  color: #8A8A8B !important;
+}
+
+.input-icon {
+  background-color: white !important;
+  border-left: none;
+  color: #722D95 !important;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #722D95 !important;
+}
+
+
+.submit-btn {
+  background-color: #722D95 !important;
+  border: none !important;
+  font-weight: 600 !important;
+  font-size: 18px !important;
+}
+
+.submit-btn:hover {
+  background-color: #722D95;
+}
+
+.input-class:focus {
+  box-shadow: 0 0 0 1px #722D95 !important;
+}
+
+form label {
+  font-weight: 500;
+}
+
+form a {
+  color: #722D95;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+form a:hover
+{
+  text-decoration: underline;
+}
+
+.signin-move-class
+{
+  color: black !important;
+  font-weight: 500 !important;
 }

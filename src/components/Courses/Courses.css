@@ -1,145 +1,169 @@
-/* Cleaned & Unified Courses.css */
-
 .courses-wrapper {
   background-color: #f1f2f6;
-  min-height: 100vh;
-  overflow-x: hidden; 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.courses-topbar {
-  background-color: #001f5c;
-  height: 70px;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  /* overflow-y: hidden; */
-}
-
-.container-fluid {
-  margin-top: 60px;
-  
-}
-
-.courses-heading{
- color: #001f5c;
- margin-top: -100px;
-}
-.student-name{
-  color: #001f5c;
-}
-.courses-header-icons {
-  /* font-size: 1.2rem; */
-  color: #001f5c;
-  cursor: pointer;
-  font-size: 25px;
-}
-
-.filter-section {
-  background-color: #001f5c;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 6px;
-  font-weight: 500;
-}
-
-.course-side-heading {
-  color: #722D95;
-}
-
-.underline-heading {
-  border-bottom: 3px solid #722D95;
-  display: inline-block;
-  padding-bottom: 5px;
-  
-}
-
-.courses-slider-container {
-  position:relative;
-  background-color: #f2f3f7;
-  padding-right:3.5rem;
-  /* padding-left: 4rem; */
-  overflow: hidden;
-  /* width:95%; */
- 
-  
-  /* border-radius: 12px; */
-}
-
-.courses-slider {
-  /* width:100px; */
-  display: flex;
-  gap: 1.5rem;
-  transition: transform 0.3s linear;
-}
-
-.course-card {
-  
-  /* background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  flex: 0 0 calc(33.333% - 1rem); 
-  padding-bottom: 1rem; */
-    background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  flex: 0 0 calc(100% / var(--cards-per-row)); /* dynamic sizing */
-  max-width: calc(100% / var(--cards-per-row));
-  padding-bottom: 1rem;
-  width:100%;
-}
-
-.course-img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  /* background-color: #f8f9fa; */
-  /* padding: 10px; */
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-}
-
-.course-title {
-  background-color: #001f5c;
-  color: white;
+/* Section title */
+.section-title {
   font-weight: bold;
-  text-align: center;
-  font-size: 1rem;
-  padding: 0.6rem;
-  border-bottom: 1px solid #ddd;
+  font-size: 1.4rem;
+  color: #6a1b9a;
 }
 
-.course-desc {
-  padding: 0.7rem 1rem;
-  font-size: 0.85rem;
-  color: #333;
+/* Ensure card rows don't wrap */
+.slider-row {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
 }
 
-.next-btn, .prev-btn {
+/* Each card takes full width by default */
+.slider-card {
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding: 10px;
+  
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .slider-card {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .slider-card {
+    flex: 0 0 33.33%;
+    max-width: 31.33%;
+  }
+}
+
+/* Course Card Style */
+.course-card {
+  background: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  height: 100%;
+  width:90%;
+  margin: 0 auto;
+}
+
+.course-card:hover {
+  transform: scale(1.02);
+}
+
+.course-card-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.course-title-heading {
+  background-color: #001A5E;
+  color: white;
+  display: flex;               /* Required for flex centering */
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+  height: 50px;                /* Optional: control overall height */
+  text-align: center;          /* Fallback for non-flex content */
+}
+
+/* Buy Section */
+.course-card-buy-section {
+  background-color: #88B4F5;
+  height: 45px;
+  display: flex;               /* Enables vertical centering */
+  align-items: center;
+  justify-content: center;
+}
+
+/* Link inside buy section */
+.course-card-buy-section a {
+  color: #001A5E;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 0 15px;             /* Remove vertical padding to avoid overflow */
+}
+
+
+/* Floating arrow to right of cards */
+.course-section {
+  position: relative;
+  padding-left: 50px;
+  padding-right: 48px;
+}
+.section-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: #001f5f;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 50%;
+  right: 65px; /* default for large screens */
+  font-size: 25px;
   cursor: pointer;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+  background-color: #001f5c;
+  border-radius: 50%;
+  padding: 0px 8px 5px 8px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  transition: all 0.3s ease;
 }
 
-.next-btn {
-  right: 0.5rem;
+/* Tablet */
+@media (max-width: 991px) {
+  .section-arrow {
+    right: 5px;
+    font-size: 23px;
+    padding: 0px 8px 5px 8px;
+  }
+  .course-card{
+    width:90%;
+    margin-right: 0;
+  }
+  
 }
 
-.prev-btn {
-  left: 0.5rem;
-}
+/* Mobile */
+@media (max-width: 767px) {
+  .section-arrow {
+    right: 10px;
+    font-size: 21px;
+    padding: 0px 8px 5px 8px;
+  }
 
+  .course-card {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .course-section {
+    padding-left: 0 !important;
+  }
+
+  /* Reduce image height */
+  .course-card-img {
+    height: 120px;  /* or try 100px for even smaller */
+  }
+
+  /* Reduce title height */
+  .course-title-heading {
+    height: 40px;
+    font-size: 16px;
+  }
+
+  /* Reduce buy button section */
+  .course-card-buy-section {
+    height: 35px;
+  }
+
+  /* Reduce text size and spacing */
+  .course-card p {
+    font-size: 14px;
+    margin: 5px 10px;
+  }
+}
 

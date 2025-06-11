@@ -3,7 +3,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 40px;
+  width: 55px;
   height: 100vh;
   background-color:white;
   display: flex;
@@ -17,14 +17,15 @@
   background: none;
   border: none;
   color:black;
-  font-size: 1.5rem;
+  font-size: 26px;
+  padding-left: 10px;
 }
 
 /* Sidebar */
 .sidebar {
   position: fixed;
   top: 0;
-  left: 0;
+  left: 0; 
   height: 100vh;
   background-color: white;
   overflow-y: auto;
@@ -36,7 +37,7 @@
 }
 
 .sidebar.show {
-  width: 210px;
+  /* width: 210px; */
 }
 
 .sidebar.hide {
@@ -73,7 +74,7 @@
 }
 
 .sidebar.show ~ .main-content {
-  margin-left: 210px;
+  margin-left: 180px;
 }
 
 .sidebar.hide ~ .main-content {

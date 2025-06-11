@@ -1,18 +1,20 @@
-import React from "react";
-import "./SignIn.css";
-import { FaEnvelope, FaLock } from "react-icons/fa";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import React, { useState } from 'react';
+import { Container, Row, Col, Form, Button, Image, InputGroup } from 'react-bootstrap';
+import { FaEnvelope, FaLock, FaEye, FaEyeSlash } from 'react-icons/fa';
+import './SignIn.css';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import login_pic from '../../assets/login_pic.png'; // Update the path if needed
 
 const SignIn = () => {
+  const [showPassword, setShowPassword] = useState(false);
+  const togglePasswordVisibility = () => setShowPassword(prev => !prev);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  let data = [
+  const data = [
     {
       id: 1,
       firstname: "krishna",
@@ -31,7 +33,6 @@ const SignIn = () => {
       phone: 1234567890,
       Id: '568'
     },
-
     {
       id: 3,
       firstname: "ibrahim",
@@ -40,15 +41,14 @@ const SignIn = () => {
       password: "123",
       phone: 1234567890,
     }
-  ]
+  ];
 
-  let handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     const user = data.find(user => user.email === email && user.password === password);
 
     if (user) {
-      
       const userDataToStore = {
         id: user.id,
         firstname: user.firstname,
@@ -59,7 +59,7 @@ const SignIn = () => {
       localStorage.setItem("userData", JSON.stringify(userDataToStore));
       toast.success('Login successful!', {
         position: "top-right",
-        autoClose:600,
+        autoClose: 600,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -78,77 +78,75 @@ const SignIn = () => {
         progress: undefined,
       });
     }
-  }
+  };
 
   return (
-    
-    <div className="bg-primary d-flex align-items-center justify-content-center min-vh-100 px-3">
+    <Container fluid className="signin-container">
       <ToastContainer />
-      <div className="signin-card  d-flex flex-column flex-md-row rounded-4  w-100 mx-auto">
-      
-        <div className=" signin-image-section w-100 w-md-50"></div>
-     
-        <div className="  signin-form-section bg-white flex-grow-1 ">
-          <div className="text-start head-text mt-2">
-            <p className="fw-bold ">Let the Journey Begin!</p>
-            <p className="fw-bold p-0">
-              Unlock a world of education with a single click! Please login to your account.
-            </p>
-          </div>
+      <Row className="justify-content-center align-items-center min-vh-100">
+        <Col md={10} lg={8} className="signin-box">
+          <Row className="shadow-lg rounded overflow-hidden">
+            <Col className="image-section d-flex justify-content-center align-items-center">
+              <Image src={login_pic} alt="Student" fluid className="signin-image" />
+            </Col>
 
-          <form onSubmit={handleSubmit}>
-            <div className="form-group mt-5">
-              <label className="fcol fw-semibold">Email Address</label>
-              <div className="input-group mb-3">
-                <input
-                  type="email"
-                  value={email}
-                  className="form-control"
-                  placeholder="Enter your Email"
-                  aria-label="Email"
-                  aria-describedby="email-icon"
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-                <span className="input-group-text" id="email-icon">
-                  <FaEnvelope />
-                </span>
-              </div>
-            </div>
+            <Col md={6} className="form-section px-3 my-4">
+              <p className='fw-semibold fs-5'>Company Logo</p>
+              <p className='fw-bold fs-4 mb-2'>Let the Journey Begin!</p>
+              <p>Unlock a world of education with a single click! Please login to your account.</p>
 
-            <div className="form-group mb-3">
-              <label className="fcol fw-semibold">Password</label>
-              <div className="input-group mb-2">
-                <input
-                  type="password"
-                  value={password}
-                  className="form-control"
-                  placeholder="Enter your Password"
-                  aria-label="Password"
-                  aria-describedby="password-icon"
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-                <span className="input-group-text" id="password-icon">
-                  <FaLock />
-                </span>
-              </div>
-            </div>
-            <div className="d-flex justify-content-end mb-3">
-              <Link to="/forgot-password" className="text-primary fw-bold text-decoration-none">
-                Forgot Password?
-              </Link>
-            </div>
+              <Form onSubmit={handleSubmit}>
+                <Form.Group controlId="formEmail">
+                  <Form.Label className='label-class'>Email Address</Form.Label>
+                  <InputGroup className='mb-2'>
+                    <Form.Control
+                      className='input-class'
+                      type="email"
+                      placeholder="Enter your e-mail id"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                    />
+                    <InputGroup.Text className='input-icon'><FaEnvelope /></InputGroup.Text>
+                  </InputGroup>
+                </Form.Group>
 
+                <Form.Group controlId="formPassword">
+                  <Form.Label className='label-class'>Password</Form.Label>
+                  <InputGroup className='mb-2'>
+                    <Form.Control
+                      className='input-class'
+                      type={showPassword ? 'text' : 'password'}
+                      placeholder="Type here"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      required
+                    />
+                    <InputGroup.Text className='input-icon' onClick={togglePasswordVisibility} style={{ cursor: 'pointer' }}>
+                      {showPassword ? <FaEyeSlash /> : <FaEye />}
+                    </InputGroup.Text>
+                    <InputGroup.Text className='input-icon'><FaLock /></InputGroup.Text>
+                  </InputGroup>
+                </Form.Group>
 
+                <div className='fw-bold text-end mb-2'>
+                  <Link to="/forgot-password" className="text-decoration-none">Forgot Password?</Link>
+                </div>
 
-            <button type="submit" className="btn btn-primary w-100 fw-bold">Login</button>
-          </form>
+                <Button className="w-100 mt-3 submit-btn" type="submit">
+                  Login
+                </Button>
 
-          <p className="mt-3 fw-bold">
-            Don't have an Account? <Link to="/signup" className="text-primary text-decoration-underline">Sign Up</Link>
-          </p>
-        </div>
-      </div>
-    </div>
+                <p className="mt-2">
+                  <span className="signin-move-class">Don't have an account? </span>
+                  <Link to="/signup">Sign Up</Link>
+                </p>
+              </Form>
+            </Col>
+          </Row>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 
